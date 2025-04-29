@@ -9,32 +9,39 @@ import { LoginPage } from './routes/LoginPage.jsx';
 import { RegisterPage } from './routes/RegisterPage.jsx';
 import { Write } from './routes/Write.jsx';
 import { SinglePostPage } from './routes/SinglePostPage.jsx';
+import { MainLayout } from './layouts/MainLayout.jsx';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <HomePage />,
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/posts",
+        element: <PostListPage />,
+      },
+      {
+        path: "/:slug",
+        element: <SinglePostPage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+      {
+        path: "/register",
+        element: <RegisterPage />,
+      },
+      {
+        path: "/write",
+        element: <Write />,
+      },
+    ],
   },
-  {
-    path: "/posts",
-    element: <PostListPage />,
-  },
-  {
-    path: "/:slug",
-    element: <SinglePostPage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
-    path: "/register",
-    element: <RegisterPage />,
-  },
-  {
-    path: "/write",
-    element: <Write />,
-  },
+  
 ]);
 
 createRoot(document.getElementById('root')).render(
