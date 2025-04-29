@@ -8,3 +8,10 @@
 -use imagekit.io 
 -use react-router v7
     npm i react-router
+-create routes/HomePage.jsx
+    routes/LoginPage.jsx
+    routes/PostListPage.jsx
+    routes/RegisterPage.jsx
+    routes/SinglePostPage.jsx
+    routes/Write.jsx
+-add routes in main.jsx
